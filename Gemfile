@@ -5,6 +5,7 @@ gem 'simple_form'
 gem 'sprockets', '2.11.0'
 gem 'sass-rails'
 gem 'kaminari'
+gem 'devise', '>= 3.2.4'
 
 gem 'rails_12factor', group: :production
 # Bundle edge Rails instead: gem 'rails', github: 'rails/rails'
