@@ -7,4 +7,5 @@ class Place < ActiveRecord::Base
   validates :address, presence: true, length: { minimum: 6}
   validates :description, presence: true, length: { maximum: 500}
   has_many :comments
+  has_many :photos
 end
