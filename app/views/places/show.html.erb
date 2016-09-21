@@ -33,6 +33,7 @@
   <% end %>
   <br />
 
+
   <div class = "pull-right">
     <% if current_user && current_user == @place.user %>
       <%= link_to 'Edit', edit_place_path(@place), class: 'btn btn-primary' %>
@@ -40,32 +41,54 @@
     <% end %>
    
   </div>
-
+  <br />
+  <br />
+  <br />
   <!-- Photos -->
 
   <div class = "clear"></div>
-  <div class = "col-xs-12">
-    <%= simple_form_for @photo, url: place_photos_path(@place) do |f| %>
-      <%= f.input :caption %>
-      <%= f.submit "Add a Photo", class: 'btn btn-primary' %>
-    <% end %>
 
-    <h1>Photos</h1>
-
-    <% @place.photos.each do |photo| %>
-      <div>
-        <blockquote>
-          <% if photo.caption.present? %>
-            <b><%= photo.caption %></b>
-          <% end %>
-        </blockquote>
+  <!-- Modal -->
+  <div class="modal fade" id="myModal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
+    <div class="modal-dialog">
+      <div class="modal-content">
+        <div class="modal-header">
+          <button type="button" class="close" data-dismiss="modal" aria-hidden="true">&times;</button>
+          <h4 class="modal-title" id="myModalLabel">Add a photo</h4>
+        </div>
+        
+          <%= simple_form_for @photo, url: place_photos_path(@place) do |f| %>
+            <div class="modal-body">
+              <%= f.input :caption %>
+              </div>
+            <div class="modal-footer">
+              <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+              <%= f.submit "Add a Photo", class: 'btn btn-primary' %>
+            </div>
+            <% end %>
       </div>
-    <% end %>
+    </div>
   </div>
+<div class = "col-xs-10 col-xs-offset-1">
+  <h1 class = "pull-left">Photos</h1>
+  <!-- Button trigger modal -->
+  <button class="btn btn-primary btn-lg pull-right" data-toggle="modal" data-target="#myModal">
+    Add a photo
+  </button>
+</div>
+  <div class = "clear"></div>
 
-<div class = "clear"></div>
+  <% @place.photos.each do |photo| %>
+    <div class = "col-xs-12 col-sm-6">
+      <blockquote>
+        <% if photo.caption.present? %>
+          <b><%= photo.caption %></b>
+        <% end %>
+      </blockquote>
+    </div>
+  <% end %>
 
-<!-- Modal -->
+<!-- Comments Modal -->
 <div class="modal fade" id="myModal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel">
   <div class="modal-dialog" role="document">
     <div class="modal-content">
@@ -90,7 +113,7 @@
   </div>
 </div>
 
-<div class = "col-xs-12">
+<div class = "col-xs-10 col-xs-offset-1">
   <h1 class = "pull-left">Comments</h1>
   <!-- Button trigger modal -->
   <button type="button" class="btn btn-primary btn-lg pull-right" data-toggle="modal" data-target="#myModal">
@@ -114,4 +137,5 @@
 
 </div>
 
+</div>
 
