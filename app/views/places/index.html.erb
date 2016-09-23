@@ -55,13 +55,10 @@
 <!-- Photo, most recent -->
   <% if place.photos.present? %>
     <div class = "col-xs-12">
-      <blockquote>
-        <% if place.photos.present? %>
-          <%= place.photos.last.caption %>
-          <br />
-          <%= image_tag(place.photos.last.Picture, height:"300") %>
-        <% end %>
-      </blockquote>
+      <% if place.photos.present? %>
+        <%= image_tag(place.photos.last.Picture, height:"300") %><br />
+        <%= place.photos.last.caption %>
+      <% end %>
     </div>
   <% end %>
 
