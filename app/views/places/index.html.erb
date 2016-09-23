@@ -16,9 +16,9 @@
     <div class = "col-xs-12">
       <blockquote>
         <% if place.photos.last.present? %>
-          <%= image_tag(place.photos.last.Picture, size:"300") %>
-          <br />
           <%= place.photos.last.caption %>
+          <br />
+          <%= image_tag(place.photos.last.Picture, height:"300") %>
         <% end %>
       </blockquote>
     </div>
