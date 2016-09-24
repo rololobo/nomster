@@ -19,7 +19,7 @@
 <br /><br />
   <% @user.comments.each do |comment| %>
     <div class = "col-xs-12 col-sm-6">
-    <h2 class = "text-center"><%= link_to comment.place.name, place_path(comment.place) %></h2>
+    <h2 class = "text-center"><%= link_to comment.place.address, place_path(comment.place) %></h2>
       <blockquote>
         <% if comment.humanized_rating.present? %>
           <%= comment.message %><br />
@@ -38,7 +38,7 @@
 <br /><br />
   <% @user.places.each do |place| %>
     <div class = "col-xs-12 col-sm-6">
-      <h1><%= link_to place.name, place_path(place) %></h1>
+      <h1><%= link_to place.address, place_path(place) %></h1>
       <i><%= place.address %></i><br />
       <p><%= place.description %></p><br />
 
