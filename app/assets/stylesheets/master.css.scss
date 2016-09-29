@@ -50,12 +50,18 @@
   font-size: 26px;
 }
 
-h1 a {
+h1 a{
   color: #FA4632;
 }
+
 h1 a:hover {
   color: #FA4632;
 }
+
+h2 a{
+  color: #FA4632;
+}
+
 .carousel-inner > .item > img, .carousel-inner > .item > a > img {
   max-height: 550px;
   width: 100%;
