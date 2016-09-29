@@ -8,4 +8,11 @@ class Place < ActiveRecord::Base
   validates :description, presence: true, length: { maximum: 500}
   has_many :comments, dependent: :destroy
   has_many :photos
+
+  
+  def last_comment
+    self.comments.order("id ASC").last
+  end
+
 end
+
