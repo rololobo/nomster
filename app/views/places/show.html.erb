@@ -5,11 +5,9 @@
   </div>
 
   <div class = "pull-right">
-    <% if current_user && current_user == @place.user %>
-      <a href="#photo-header" class="btn btn-default btn-lg">Photos</a>
-      <a href="#comment-header" class="btn btn-default btn-lg">Comments</a>
-    <% end %>
-  </div>
+    <a href="#photo-header" class="btn btn-default btn-lg">Photos</a>
+    <a href="#comment-header" class="btn btn-default btn-lg">Comments</a>
+</div>
   <div class = "clear"></div>
   <br />
   <p><%= @place.description %></p>
