@@ -18,9 +18,11 @@ Nomster is a **Yelp clone** built with the **Ruby on Rails** framework. It allow
 
 ## App Snapshot
 
-Here's glimpse of a restaurant's detail page:
+A glimpse of a restaurant's detail page:
+
 ![alt tag](http://i.imgur.com/JzrWBfh.png)
 
 This is an example of a user profile page, including the places and comments they've added:
+
 ![alt tag](http://i.imgur.com/Spew9wj.png)
 
